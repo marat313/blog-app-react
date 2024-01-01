@@ -1,19 +1,21 @@
-import React from 'react'
-import BlogCard from './BlogCard'
+import React from 'react';
+import MainNews from '../components/MainNews';
+import OtherNews from '../components/OtherNews';
 
-function Home({isAuth}) {
+// import { useAppContext } from './AppContext';
+
+const Home = React.memo(() => {
+  // const { isAuth } = useAppContext();
 
   return (
     <div className='home'>
-      
       <h1>THE BLOG</h1>
-      <div className='welcome'>
-        <div>{localStorage.getItem("userName")}</div>
+      <div className="cardContainer">
+        <MainNews  />
+        <OtherNews  />
       </div>
-      <BlogCard isAuth={isAuth} />
     </div>
-  )
-  
-}
+  );
+});
 
-export default Home
+export default Home;

@@ -1,147 +1,186 @@
-@font-face {
-  font-family: "Mondo-Medium";
-  src: url("./assets/Mondo-Medium.ttf");
+
+
+/* ==================  APP PAGES STYLES ==================== */
+
+.App{
+  max-width: 525px;
+  margin: 0 auto;
+  /* padding: 0 10px; */
+  overflow-x: hidden;
 }
 
-/* ================   MY POSTS ============================ */
-.line{
+.AppFixedMenu{
+  position: fixed;
+  bottom: -2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999999;
+}
+.AppFixedMenu > ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  position: absolute;
+  bottom: -3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+}
+.AppFixedMenu > ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  background-color: #196732;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  gap: 30px;
+  list-style: none;
+  border-radius: 40px;
+}
+ a{
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+  font-size: 40px;
+}
+
+.fixedMenuUserPhoto{
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+}
+
+.bookmark3{
+  font-size: 32px;
+}
+/* ================ HOME PAGE STYLE ======================== */ 
+
+.home{
+  /* padding: 0 15px; */
+  margin: 0 auto;
+} 
+
+h1{
+  font-size: calc(64px + 16 * (100vw / 1140));  
+  text-align: center;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+
+/* ================  POST PAGE STYLE ============================ */
+
+.postWrapper{
+  width: 100%;
+  margin: 20px auto;
+  height: auto;
+  padding: 10px;
+  background-color: #d6cdc0;
+}
+.post{
+  text-align: center;
+}
+.postImg{
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+.postUserInfo{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-family: "Manrope";
+}
+.postAuthorName{
+  display: flex;
+  align-items: center;
+}
+.postAuthorImg{
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  margin-left: 5px;
+}
+
+.postTitle{
+  font-family: "Manrope";
+  font-size: 32px;
+  margin-top: 20px;
+  color: #000000;
+}
+
+
+.postTitle::first-letter{
+  text-transform: uppercase;
+}
+
+.postTitleUnderline{
   width: 150px;
   margin: 0 auto;
   margin-top: 10px;
   border: 1px solid black;
 }
 
-
-.openBlog{
+.postText{
   text-align: left;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.5;
   margin-top: 20px;
-  font-family: 'PT Serif', serif;
+  font-family: 'Manrope';
+  font-weight: 500;
+  line-height: 1.7;
   border-radius: 10px;
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  background-color: #d6cdc0;
+  color: #000000;
 }
-
-
-.individualPost{
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 15px;
-  height: auto;
+.postText > p > span{
+  color: #000000;
 }
-.detail{
-  text-align: center;
+.postText > p > a{
+  font-size: 20px;
 }
-.detail > img{
-  width: 100%;
-}
-.detail > h2{
-  margin-top: 20px;
-}
-.detail > p{
-  margin-top: 20px;
-  text-align: left;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.back{
-  display: none;
-}
-
-
-
-/* ================   MY POSTS ============================ */
-
-.photoUser{
-  border-radius: 10px;
-  width: 50px;
-  height: 50px;
-  margin-left: -25px;
-}
-
-
-h1{
-  font-size: calc(64px + 16 * (100vw / 1140));  
-  text-align: center;
-  margin-top: 15px;
+.postText > p > a:hover{
   cursor: pointer;
+  text-decoration: underline;
+}
+.postText::first-letter{
+  font-size: 40px;
 }
 
 
+/* ===================== LOGIN PAGE ========================== */
 
-/* --------- LOGIN PAGE ---------- */
 .loginPage{
   text-align: center;
   margin-top: 150px;
   height: 420px;
 }
 
-
-/* --------- CREATE BLOG PAGE ---------- */
-.moreBtn{
-  cursor: pointer;
-  align-items: center;
-  text-decoration: none;
-}
-.moreBtn > i{
-  font-size: 20px;
-}
-
-.arrow{
-  transform: rotate(40deg);
-  transition: all 0.3s ease 0s;
-}
-
-
-.changeArrow{
-  transform: rotate(0deg);
-  transition: all 0.3s ease 0s;
-}
-
-
-.grayscale {
-  filter: grayscale(1);
-  transition: 1s;
- }
- .grayscale:hover {
-  filter: grayscale(0);
- }
-
- .welcome{
-  display: none;
- }
-
-
-
-.active{
-  height: auto;
-}
-.moreText{
-  display: none;
-}
-.readMore{
-  display: flex;
-  text-decoration: none;
-  align-items: center;
-  align-content: center;
-  color: #514e46;
+.loginPage > button{
+  margin-top: 20px;
   font-weight: bold;
 }
-.readMore > i {
-  margin-left: 8px;
-  align-items: center;
-}
 
-.create{
+
+/* =================== CREATE BLOG PAGE =================== */
+
+.createPost{
   max-width: 500px;
   width: 100%;
   text-align: center;
   margin: 0 auto;
-  padding-top: 30px;
+  padding: 30px 15px 0px 15px;
 }
+
+
 .textarea{
   margin-top: 50px;
   border-radius: 10px;
@@ -150,7 +189,7 @@ h1{
   padding: 10px;
 }
 .textarea::placeholder{
-  font-size: 22px;
+  font-size: 17px;
 }
 
 .publish{
@@ -158,410 +197,43 @@ h1{
   margin: 0 auto;
   margin-top: 20px;
 }
-
-.user-info{
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
-  width: 355px;
+.quill{
+  margin-top: 30px;
+}
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+.ql-toolbar.ql-snow {
+  border: 1px solid rgb(91, 83, 83);
 }
 
-i{
-  color: #514e46;
-  font-size: 23px;
-  cursor: pointer;
-}
-
-  .logoText{
-    text-decoration: none;
-    list-style: none;
-    font-family: 'Electrolize', sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    text-align: center;
-    color: #010001;
-  }
-
-
-
-
-  
-/* =============================================== */
-
-.navigation {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  align-items: center;
-  height: 90px;
-  padding: 0.5rem 0rem;
-  background-color: #c5c1b7;
-  color: #010001;
-  max-width: 1140px;
-}
-
-
-.brand-name {
-  text-decoration: none;
-  color: black;
-  font-size: 1.3rem;
-  margin-left: 1rem;
-}
-
-.navigation-menu {
-  margin-left: auto;
-}
-
-.navigation-menu ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  font-family: 'Electrolize', sans-serif;
-  color: #010001;
-}
-
-.navigation-menu li {
-  list-style-type: none;
+.ql-editor{
   font-size: 20px;
-  margin: 0 1rem;
-  color: #010001;
-  font-weight: bold;
 }
-.navigation-menu li:hover{
-  transform: scale(1.0);
+.ql-editor > p > a{
+  font-size: 16px;
 }
-
-.navigation-menu li a {
-  text-decoration: none;
-  display: block;
-  width: 100%;
-  color: #010001;
+.ql-container.ql-snow {
+  border: 1px solid rgb(91, 83, 83);
 }
-
-.navigation-menu .active{
-  color: #45e215;
-  background-color: #45e215;
+.ql-formats{
+  margin: 10px 0px;
 }
-
-
-.hamburger {
-  border: 0;
-  height: 40px;
-  width: 40px;
-  padding: 0.5rem;
-  border-radius: 50%;
-  background-color: #c9d0ed;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  position: absolute;
-  top: 50%;
-  right: 25px;
-  transform: translateY(-50%);
-  display: none;
+.ql-formats > button {
+  margin-left: 10px;
 }
-
-.hamburger:hover {
-  background-color: #7e8bc0;
+.ql-snow .ql-picker.ql-header{
+  font-size: 25px;
+  width: 115px;
 }
-
-
-
-
-/* ================================================= */
-
-  .misl{
-    font-size: 45px;
-    text-align: center;
-    margin-top: 0;
-  }
-
-.openBlog > img{
-  width: 500px;
-  height: 300px;
+.ql-snow .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) svg{
+  width: 25px;
+  height: 25px;
+  margin-right: -15px;
 }
-h2{
-  font-size: 34px;
+.ql-snow.ql-toolbar button svg, .ql-snow .ql-toolbar button svg{
+  width: 25px;
+  height: 25px;
 }
-
-.aRrow{
-  display: none;
-}
-
-
-
-
-
-
-  /* ==================================== */
-  @media (max-width: 950px){
-    .photoUser{
-      width: 40px;
-      height: 40px;
-    }
-  }
-
-  @media (max-width: 800px){
-    .photoUser{
-      margin-left: -15px;
-    }
-  }
-
-  @media screen and (max-width: 915px) {
-    .navigation-menu li{
-      font-size: 16px;
-      text-align: center;
-    }
-  }
-  @media screen and (max-width: 785px) {
-    .navigation-menu li{
-        margin-left: 10px;
-        margin-right: 10px;
-        text-align: center;
-    }
-  }
-
-  @media (max-width: 700px) {
-    .navigationn{
-      margin-left: 0;
-    }
-    .navMenu{
-      text-align: center;
-      align-items: center;
-    }
-  }
-
-  @media only screen and (max-width: 524px) {
-    header .nav-btn {
-      visibility: visible;
-      opacity: 1;
-    }
-    .navMenu{
-      display: block;
-      text-align: center;
-      line-height: 1.5;
-    }
-  
-    header nav {
-      position: fixed;
-      top: -100vh;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      background-color: var(--mainColor);
-      transition: 0.2s;
-      z-index: 99999;
-  
-    }
-  
-    header .responsive_nav {
-      transform: translateY(100vh);
-    }
-  
-    nav .nav-close-btn {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-    }
-  
-    nav a {
-      font-size: 1.5rem;
-    }
-  }
-
-  @media screen and (max-width: 550px) {
-
-    .css-jrrdlf{
-      width: 350px;
-      margin: 20px auto;
-    }
-    .logoText{
-      margin: 0 auto;
-      margin-right: 40px;
-    }
-    .aRrow{
-      display: block;
-      margin-left: 20px;
-    }
-    .back{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: "Mondo-Medium";
-      font-weight: bold;
-      font-size: 22px;
-      text-align: center;
-      z-index: 9999;
-      position: fixed;
-      bottom: 4%;
-      right: 37%;
-      border-radius: 10px;
-      background-color:#a7dec0;
-      border: 1px solid black;
-      color: #010001;
-      width: 100px;
-      height: 45px;
-    }
-    .back:hover{
-      background-color: #b2d0f2;
-    }
-    .hamburger {
-      display: block;
-      width: 50px;
-      height: 50px;
-    }
-
-    .navigation{
-      width: 100%;
-    }
-
-  
-    .navigation-menu ul {
-      flex-direction: column;
-      position: absolute;
-      top: 70px;
-      right: 10px;
-      width: 250px;
-      height: calc(100vh - 450px);
-      z-index: 999999;
-      display: none;
-    }
-    .domoi > li{
-      position: relative;
-      right: 10px;
-      top: 10px;
-    }
-  
-    .navigation-menu li {
-      text-align: center;
-      margin: 0;
-      background-color: #f8f5ee;
-      border-top: 1px solid black;
-    }
-  
-    .navigation-menu li a {
-      color: black;
-      width: 100%;
-      padding: 1.5rem 0;
-    }
-  
-    .navigation-menu li:hover {
-      background-color: #b2d0f2;
-    }
-  
-    .navigation-menu.expanded ul {
-      display: block;
-    }
-    .welcome{
-      display: block;
-      text-align: center;
-      margin: -10px auto;
-      font-size: 15px; 
-    }
-    .welcome::before{
-      content: "Добро пожаловать";
-
-    }
-  }
-
-  /* ===================================== */
-
-  @media (max-width: 388px) {
-
-    h1{
-      font-size: 55px;
-    }
-    .misl{
-      font-size: 35px;
-      margin-bottom: 10px;
-    }
-    .card{
-      height: auto;
-    }
-    .css-x2g7cm-MuiPaper-root-MuiCard-root{
-      margin-left: 20px;
-      margin-right: 20px;
-    }
-  }
-
-
-/* =========================================================== */
-
-
- .mobileNav{
-   display: none;
- }
-
- @media screen and (max-width: 550px){
-  .mobileNav{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    position: fixed;
-    bottom: 4%;
-    /* left: 20%; */
-    right: calc((100vw - 450px) / 2);
-    z-index: 99999;
-  }
-  .mobileNav ul{
-    display: flex;
-    list-style: none;
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 18px;
-    background-color: #bfbfc1;
-  }
-  .mobileNav ul li{
-    margin-left: 15px;
-    color: #000000;
-    font-weight: bold;
-  }
- }
- @media screen and (max-width: 470px) {
-  .mobileNav{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    position: fixed;
-    bottom: 4%;
-    left: 15%;
-    z-index: 99999;
-  }
- }
- @media screen and (max-width: 420px) {
-  .mobileNav{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    position: fixed;
-    bottom: 4%;
-    left: 13%;
-    z-index: 99999;
-  }
- }
- @media screen and (max-width: 380px) {
-  .mobileNav{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    position: fixed;
-    bottom: 4%;
-    left: 13%;
-    z-index: 99999;
-  }
-  .mobileNav ul{
-    padding: 0;
-    font-weight: normal;
-    font-size: 15px;
-  }
-  .mobileNav ul li{
-    margin: 7px;
-  }
- }

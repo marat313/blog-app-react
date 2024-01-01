@@ -3,8 +3,16 @@
      padding: 0;
      box-sizing: border-box;
 }
+html{
+     max-width: 425px;
+     margin: 0 auto;
+}
 body{
-     background-color: #c5c1b7;
+     /* background-color: #e8e9ea; */
+     background-color: #d6d9dc;
      color: #010001;
-     margin-bottom: 50px;
+     margin: 0 auto;
+     margin-bottom: 80px;
+     overflow-x: hidden;
+     display: block;
 }

@@ -1,0 +1,90 @@
+/* ================= OTHER NEWS SECTION ================== */
+
+.otherNewsContainer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+  .otherNewsContainer > .card{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    max-width: 425px;
+    height: 150px;
+    border-radius: 15px;
+    background-color: #1e516c;
+    /* border: 2px solid rgb(165, 159, 159); */
+  }
+  
+  .otherNewsContainer > .card > img{
+    max-width: 150px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .noPhoto{
+    max-width: 160px;
+    max-height: 150px;
+    width: 170px;
+    height: auto;
+    text-align: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    object-fit: cover;
+    background-color: #2e2b26;
+  }
+  .otherNewsContainer > .card > .cardContent{
+    width: 260px;
+    padding: 10px 10px 0px 10px;
+    position: relative;
+    background-color: #1e516c;
+  }
+  .otherNewsContainer > .card > .cardContent > .postTitle > a{
+    font-size: 17px;
+    color: #000000;
+  }
+  .otherNewsContainer > .card > .cardContent > .cardAction {
+    width: 175px;
+    padding: 0;
+  }
+  .otherNewsContainer > .card > .cardContent > .delete{
+    position: absolute;
+    top: 75%;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  .bookmark{
+    position: absolute;
+    top: 75%;
+    right: 45px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  .css-cpgvjg-MuiSnackbar-root{
+    margin-bottom: 80px;
+    position: static;
+ }
+
+ .skeleton-wave {
+  display: inline-block;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

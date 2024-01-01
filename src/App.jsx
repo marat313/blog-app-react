@@ -1,157 +1,79 @@
-import {  useState } from "react";
+
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Pages/Home";
 import CreateBlog from "./Pages/CreateBlog";
 import Login from "./Pages/Login";
 import { signOut } from "firebase/auth";
-import { auth } from "./firebase-config";
-import PrivatePost from "./Pages/PrivatePost";
-import MyPosts from "./Pages/MyPosts";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { auth, db } from "./firebase-config";
+import MyPosts from "./Pages/Post";
+import { FaHome } from "react-icons/fa";
+import { IoIosLogOut, IoIosAddCircle, IoIosLogIn } from "react-icons/io";
+import { FaRegBookmark } from "react-icons/fa";
 import "./App.css";
+import SavedPost from "./Pages/SavedPost";
+import { useAppContext } from './Pages/AppContext';
 
 function App() {
-      const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuthBlog"));
-      const [isNavExpanded, setIsNavExpanded] = useState(false);
-      console.log(isAuth);
+//   const [isAuth, setIsAuth] = useState(() => localStorage.getItem("isAuthBlog") === "true");
+  const { isAuth, setIsAuth } = useAppContext();
 
-      const signUserOut = () => {
-            signOut(auth).then(() => {
-                  localStorage.clear();
-                  setIsAuth(false);
-                  window.location.pathname = "/login";
-            });
-      };
+  const signUserOut = () => {
+    signOut(auth).then(() => {
+      localStorage.clear();
+      setIsAuth(false);
+      window.location.pathname = "/login";
+    });
+  };
 
-      const toggleMenu = () => {
-            setIsNavExpanded(!isNavExpanded)
-          };
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/myposts/:id" element={<MyPosts />} />
+          <Route path="/savedpost" element={<SavedPost />} />
+          <Route path="/createBlog" element={<CreateBlog />} />
+          <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
+        </Routes>
 
-      
-
-      return (
-            <Router>
-
-
-                  {/* ============================================== */}
-                  
-                    <nav className="navigation">
-                        <Link style={{textDecoration: "none"}} to="/">
-                              <i className="aRrow fa-solid fa-arrow-left"> </i>
-                        </Link>
-
-                        <a href="#" className="logoText">
-                              {" "}
-                              <span> Road to the</span>
-                              <br />
-                              <span>dream</span>
-                        </a>
-
-                        <button
-                              className="hamburger"
-                              onClick={toggleMenu}
-                        >
-                              <i className="fa-solid fa-bars"></i>
-                        </button>
-
-                        <div
-                              className={
-                                    isNavExpanded
-                                          ? "navigation-menu expanded"
-                                          : "navigation-menu"
-                              }
-                        >
-                              <ul className="domoi">
-                                    <li>
-                                          {" "}
-                                          <Link to="/">Главная</Link>{" "}
-                                    </li>
-
-                                    {!isAuth ? (
-                                          <li>
-                                                {" "}
-                                                <Link to="/login">
-                                                      Войти
-                                                </Link>{" "}
-                                          </li>
-                                    ) : (
-                                          <ul>
-                                                <li>
-                                                      <Link to="/createblog">
-                                                            Создать пост
-                                                      </Link>
-                                                </li>
-                                                <li>
-                                                      <Link
-                                                            onClick={
-                                                                  signUserOut
-                                                            }
-                                                      >
-                                                            {" "}
-                                                            Выйти
-                                                      </Link>
-                                                </li>
-                                                <li>
-                                                      <Link>
-                                                            {" "}
-                                                            {localStorage.getItem(
-                                                                  "userName"
-                                                            )}
-                                                      </Link>
-                                                </li>
-                                                <li>
-                                                      <Link>
-                                                            {" "}
-                                                            <img
-                                                                  className="photoUser"
-                                                                  src={localStorage.getItem(
-                                                                        "userPhotoUrl"
-                                                                  )}
-                                                                  alt=""
-                                                            />{" "}
-                                                      </Link>
-                                                </li>
-                                          </ul>
-                                    )}
-                              </ul>
-                        </div>
-                  </nav> 
-
-{/*                   <nav className="mobileNav">
-                        <ul>
-                              <li>Главная</li>
-                              <li>Создать пост</li>
-                              <li>Выйти</li>
-                              <li>Войти</li>
-                        </ul>
-                  </nav>  */}
-
-                  <div className="App">
-                        <Routes>
-                              <Route
-                                    path="/"
-                                    element={<Home isAuth={isAuth} />}
-                              />
-                              <Route
-                                    path="/privatepost"
-                                    element={<PrivatePost isAuth={isAuth} />}
-                              />
-                              <Route
-                                    path="/myposts/:id"
-                                    element={<MyPosts />}
-                              />
-                              <Route
-                                    path="/createBlog"
-                                    element={<CreateBlog isAuth={isAuth} />}
-                              />
-                              <Route
-                                    path="/login"
-                                    element={<Login setIsAuth={setIsAuth} />}
-                              />
-                        </Routes>
-                  </div>
-            </Router>
-      );
+        <div className="AppFixedMenu">
+          <ul>
+            <Link to="/">
+              <FaHome />
+            </Link>
+            {console.log(isAuth)}
+            {!isAuth ? (
+              <Link to="/login">
+                <IoIosLogIn />
+              </Link>
+            ) : (
+              <div style={{ display: "flex", gap: "30px" }}>
+                <Link to="/savedpost">
+                  <FaRegBookmark className="bookmark3" />
+                </Link>
+            
+                <Link to="/createblog">
+                  <IoIosAddCircle />
+                </Link>
+                
+                <Link to="/logout" onClick={signUserOut}>
+                  <IoIosLogOut />
+                </Link>
+                <Link>
+                  <img
+                    className="fixedMenuUserPhoto"
+                    src={localStorage.getItem("userPhotoUrl")}
+                    alt=""
+                  />
+                </Link>
+              </div>
+            )}
+          </ul>
+        </div>
+      </div>
+    </Router>
+  );
 }
 
 export default App;

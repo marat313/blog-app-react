@@ -1,7 +1,7 @@
 {
-  "name": "my-blog-app",
+  "name": "phenomenal",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,19 +10,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.0",
+    "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.13.0",
+    "@mui/material": "^5.15.0",
     "@mui/styled-engine-sc": "^5.12.0",
-    "firebase": "^9.22.0",
+    "firebase": "^10.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
+    "react-loading-skeleton": "^3.3.1",
+    "react-quill": "^2.0.0",
     "react-router-dom": "^6.11.1",
+    "react-syntax-highlighter": "^15.5.0",
     "styled-components": "^5.3.10",
-    "swiper": "^10.1.0",
+    "swiper": "^10.3.1",
     "uid": "^2.0.2",
     "uuid": "^9.0.0"
   },

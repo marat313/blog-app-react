@@ -1,0 +1,168 @@
+/* ============ MAIN CARD STYLE ============== */
+
+.mainNewsContainer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mainNewsContainer > .swiper {
+  margin: 0 auto;
+}
+
+.mainNewsContainer > .swiper > .swiper-wrapper {
+  margin: 0 auto;
+}
+
+.mainNewsContainer > .swiper > .swiper-wrapper > .swiper-slide {
+  max-width: 265px;
+  margin: 0 auto;
+}
+
+.mainNewsContainer > .swiper > .swiper-wrapper > .swiper-slide > .card {
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  background-color: #1e516c;
+  border-radius: 10px;
+}
+
+.mainCardPhoto {
+  cursor: pointer;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  transition: 0.2s;
+  background-color: #514e46;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.mainCardPhoto:hover {
+  transform: scale(1.1);
+}
+
+.card_create_date {
+  position: absolute;
+  bottom: 12%;
+  left: -1%;
+  padding: 0;
+  margin-left: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #5bcdcf;
+  text-transform: capitalize;
+}
+
+.mainCardDelete {
+  position: absolute;
+  bottom: 10%;
+  right: 6%;
+  font-size: 22px;
+}
+
+.bookmark2 {
+  position: absolute;
+  top: 82%;
+  right: 18%;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.noPhoto1 {
+  width: 100%;
+  height: 150px;
+  font-size: 150px;
+  background-color: #514e46;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+/* =====  SWIPER =========== */
+
+.mainNewsContainer > .swiper {
+  margin: 0 auto;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+}
+
+.postTitle::first-letter {
+  text-transform: uppercase;
+}
+
+.postTitle > a {
+  cursor: pointer;
+  font-family: "Alice";
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.deletePost {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.deletePost button {
+  border: none;
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.delete > i {
+  color: #514e46;
+}
+
+.delete > i:hover {
+  transform: scale(1.2);
+  color: #b70000;
+}
+
+.cardContent {
+  color: "#202ba8";
+  background-color: #1e516c;
+}
+
+.cardAction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e516c;
+  position: "absolute";
+  bottom: "0%";
+  left: "0%";
+  padding: 0;
+}
+
+.contentText {
+  font-family: "Manrope";
+  font-size: 18px;
+}
+
+.contentText::first-letter {
+  text-transform: uppercase;
+}
+
+
+
+.skeleton-wave {
+  display: inline-block;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
